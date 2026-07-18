@@ -1,0 +1,47 @@
+[gd_scene format=4 uid="uid://cl2mm3y67sosw"]
+
+[ext_resource type="Texture2D" uid="uid://das38iovemixj" path="res://icon.svg" id="1_2q6dc"]
+[ext_resource type="Script" uid="uid://byypmov1878kd" path="res://scenes/level.gd" id="1_w8frs"]
+[ext_resource type="PackedScene" uid="uid://dwu8vcmmrdkfn" path="res://scenes/player.tscn" id="2_w7c3h"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7c3h"]
+texture = ExtResource("1_2q6dc")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, -16, 0, -16, -16, 16, -16, 16, 0)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, -16, 0, -16, -16, 16, -16, 16, 0)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, -16, 0, -16, -16, 16, -16, 16, 0)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, -16, 0, -16, -16, 16, -16, 16, 0)
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rxf60"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_w7c3h")
+
+[node name="Level" type="Node2D" unique_id=55695551]
+script = ExtResource("1_w8frs")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=465967631]
+tile_map_data = PackedByteArray("AAAAAAkAAAABAAAAAAABAAkAAAABAAAAAAACAAkAAAABAAAAAAADAAkAAAABAAAAAAAEAAkAAAABAAAAAAAFAAkAAAABAAAAAAAGAAkAAAABAAAAAAAHAAkAAAABAAAAAAAIAAkAAAABAAAAAAAJAAkAAAABAAAAAAAKAAkAAAABAAAAAAAHAAUAAAABAAAAAAAIAAUAAAABAAAAAAAJAAUAAAABAAAAAAAKAAUAAAABAAAAAAALAAUAAAABAAAAAAAMAAUAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_rxf60")
+
+[node name="Player" parent="." unique_id=925463082 instance=ExtResource("2_w7c3h")]
+position = Vector2(91, 177)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=96672372]
+position_smoothing_enabled = true
