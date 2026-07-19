@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://das38iovemixj" path="res://icon.svg" id="1_2q6dc"]
 [ext_resource type="Script" uid="uid://byypmov1878kd" path="res://scenes/level.gd" id="1_w8frs"]
 [ext_resource type="PackedScene" uid="uid://dwu8vcmmrdkfn" path="res://scenes/player.tscn" id="2_w7c3h"]
+[ext_resource type="AudioStream" uid="uid://ds3oi3dmduj2g" path="res://sfx/music.mp3" id="4_mx8sn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7c3h"]
 texture = ExtResource("1_2q6dc")
@@ -62,3 +63,8 @@ position_smoothing_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1016684328]
 color = Color(0.0056611504, 0.0056611514, 0.00566115, 1)
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=1308152888]
+stream = ExtResource("4_mx8sn")
+volume_db = -12.258
+autoplay = true

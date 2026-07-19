@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		
 	foam.value = 500 - Global.foam
 	
-	if Global.light > 1000:
+	if Global.light > 2000:
 		Global.battery_dead = true
 		
-	light.value = 1000 - Global.light
+	light.value = 2000 - Global.light
