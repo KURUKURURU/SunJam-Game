@@ -21,6 +21,10 @@ window/size/viewport_width=352
 window/size/viewport_height=320
 window/stretch/mode="viewport"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
 [input]
 
 click={
