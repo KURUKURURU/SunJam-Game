@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://ctrx8t7q31l7e"]
+
+[ext_resource type="Script" uid="uid://demwrutko4810" path="res://scenes/start_menu.gd" id="1_h61rw"]
+[ext_resource type="Texture2D" uid="uid://df2nnstdlpqs5" path="res://img/tileatlas1.png" id="1_ouf4f"]
+[ext_resource type="FontFile" uid="uid://bljm4gy6lf5kd" path="res://ft/dungeon-mode.ttf" id="2_m7x51"]
+[ext_resource type="FontFile" uid="uid://wdp0v3qquwv3" path="res://ft/dungeon-mode-inverted.ttf" id="3_h61rw"]
+[ext_resource type="Texture2D" uid="uid://dpg3wwj31hbpm" path="res://img/mouselight.png" id="5_4v6gu"]
+[ext_resource type="Script" uid="uid://djnonf03d462t" path="res://scenes/mouselight.gd" id="6_nxjfj"]
+[ext_resource type="Texture2D" uid="uid://ccrvk4151fsce" path="res://img/question.png" id="7_nxjfj"]
+[ext_resource type="AudioStream" uid="uid://cx8tssaotudny" path="res://sfx/ting.wav" id="8_u4qax"]
+[ext_resource type="Theme" uid="uid://bqydg5w8kdsv1" path="res://scenes/button.tres" id="9_e58y3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thu50"]
+atlas = ExtResource("1_ouf4f")
+region = Rect2(99, 66, 33, 32)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rxf60"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3f5hn"]
+light_mode = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_rxf60"]
+font = ExtResource("2_m7x51")
+font_color = Color(0, 0, 0, 1)
+
+[node name="startMenu" type="Node2D" unique_id=48786015]
+script = ExtResource("1_h61rw")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1623477832]
+repeat_size = Vector2(630, 0)
+autoscroll = Vector2(15, 0)
+
+[node name="bg" type="TextureRect" parent="Parallax2D" unique_id=422553865]
+offset_left = -148.0
+offset_top = -40.0
+offset_right = 482.0
+offset_bottom = 342.0
+texture = SubResource("AtlasTexture_thu50")
+stretch_mode = 1
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=734892262]
+material = SubResource("CanvasItemMaterial_rxf60")
+offset_left = 17.0
+offset_top = 20.0
+offset_right = 348.0
+offset_bottom = 228.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_m7x51")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[wave]Escape the Shelter"
+
+[node name="Title2" type="RichTextLabel" parent="." unique_id=1723326815]
+material = SubResource("CanvasItemMaterial_rxf60")
+offset_left = 17.0
+offset_top = 20.0
+offset_right = 348.0
+offset_bottom = 228.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_h61rw")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[wave]Escape the Shelter"
+
+[node name="intro" type="Node2D" parent="." unique_id=1333177938]
+
+[node name="info1" type="RichTextLabel" parent="intro" unique_id=1232395538]
+offset_left = 63.0
+offset_top = 168.0
+offset_right = 337.0
+offset_bottom = 209.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_h61rw")
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "<--- bar tracks amount of foam left"
+
+[node name="info2" type="RichTextLabel" parent="intro" unique_id=1040935408]
+offset_left = 63.0
+offset_top = 168.0
+offset_right = 337.0
+offset_bottom = 209.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_m7x51")
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "<--- bar tracks amount of foam left"
+
+[node name="info3" type="RichTextLabel" parent="intro" unique_id=932195812]
+offset_left = 98.0
+offset_top = 278.0
+offset_right = 372.0
+offset_bottom = 319.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_h61rw")
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "<- bar tracks 
+light's battery
+life"
+
+[node name="info4" type="RichTextLabel" parent="intro" unique_id=539621092]
+offset_left = 98.0
+offset_top = 278.0
+offset_right = 372.0
+offset_bottom = 319.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_m7x51")
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "<- bar tracks 
+light's battery
+life"
+
+[node name="mouselight" type="PointLight2D" parent="." unique_id=1002511374]
+scale = Vector2(1.9971976, 1.9971976)
+texture = ExtResource("5_4v6gu")
+script = ExtResource("6_nxjfj")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1960066878]
+color = Color(0.0056611504, 0.0056611514, 0.00566115, 1)
+
+[node name="question" type="TextureButton" parent="." unique_id=2045240904]
+material = SubResource("CanvasItemMaterial_3f5hn")
+offset_left = 309.0
+offset_top = 277.0
+offset_right = 349.0
+offset_bottom = 317.0
+texture_normal = ExtResource("7_nxjfj")
+
+[node name="ting" type="AudioStreamPlayer" parent="." unique_id=1995580114]
+stream = ExtResource("8_u4qax")
+volume_db = -13.22
+pitch_scale = 0.67
+
+[node name="Button" type="Button" parent="." unique_id=765729290]
+offset_left = 213.0
+offset_top = 193.0
+offset_right = 252.82272
+offset_bottom = 218.0
+scale = Vector2(3.2142456, 3.2142456)
+theme = ExtResource("9_e58y3")
+theme_override_font_sizes/font_size = 10
+
+[node name="Label" type="Label" parent="Button" unique_id=14813853]
+layout_mode = 0
+offset_left = 5.9111853
+offset_top = 9.022336
+offset_right = 76.91119
+offset_bottom = 32.022335
+scale = Vector2(0.4216989, 0.4216989)
+text = "Play!"
+label_settings = SubResource("LabelSettings_rxf60")
+
+[connection signal="pressed" from="question" to="." method="_on_question_pressed"]

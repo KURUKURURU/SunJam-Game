@@ -117,7 +117,7 @@ color = Color(0.24115604, 0.24115604, 0.24115604, 1)
 script = ExtResource("9_d2wvv")
 
 [node name="PointLight2D" type="PointLight2D" parent="Pivot" unique_id=861937048]
-position = Vector2(61, -32.000004)
+position = Vector2(46.000004, 20)
 rotation = 0.2307793
 scale = Vector2(1, 0.4682532)
 energy = 1.69
@@ -129,6 +129,7 @@ rotation = 0.2307793
 scale = Vector2(1.063, 1.063)
 sprite_frames = SubResource("SpriteFrames_3f5hn")
 animation = &"release"
+flip_v = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=243000774]
 scale = Vector2(1.2840738, 1.2840738)
@@ -139,7 +140,7 @@ animation = &"move"
 sprite_frames = SubResource("SpriteFrames_3v2ag")
 animation = &"move"
 autoplay = "move"
-frame_progress = 0.26719737
+frame_progress = 0.5402307
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=390507642]
 shape = SubResource("RectangleShape2D_w7c3h")

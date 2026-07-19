@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ckgc71x7k2gf4"]
+
+[ext_resource type="Texture2D" uid="uid://fqye0hibkfnq" path="res://img/lightbars.png" id="1_to7fh"]
+[ext_resource type="Texture2D" uid="uid://1c5wrdxyfend" path="res://img/bars.png" id="2_qvkcj"]
+
+[node name="window" type="Node2D" unique_id=254981302]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2004378040]
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 39.0
+offset_bottom = 20.0
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1137988624]
+position = Vector2(19.75, 18.75)
+scale = Vector2(1.2272727, 1.0454545)
+texture = ExtResource("1_to7fh")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1410494768]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_qvkcj")

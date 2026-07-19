@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SunJam Game"
-run/main_scene="uid://cl2mm3y67sosw"
+run/main_scene="uid://ctrx8t7q31l7e"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
@@ -25,6 +25,7 @@ Global="*uid://copdc05ej0roq"
 window/size/viewport_width=352
 window/size/viewport_height=320
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="uid://cgyterqxd2ys"
 
 [editor_plugins]
 

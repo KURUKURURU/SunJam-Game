@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c352oqlpd1kgm" path="res://scenes/foam.gd" id="1_c541s"]
 [ext_resource type="Texture2D" uid="uid://b5h1l55jwph0e" path="res://img/foamball.png" id="2_c541s"]
+[ext_resource type="Texture2D" uid="uid://bpnlqhdwf5826" path="res://img/mousepiot.png" id="3_f81ii"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rxf60"]
 radius = 19.104973
@@ -124,6 +125,15 @@ script = ExtResource("1_c541s")
 position = Vector2(0, -5.676647)
 scale = Vector2(0.06755237, 0.06755237)
 texture = ExtResource("2_c541s")
+
+[node name="TextureRect" type="TextureRect" parent="Sprite2D" unique_id=2140404906]
+show_behind_parent = true
+offset_left = -17.58794
+offset_top = -18.400383
+offset_right = 22.41206
+offset_bottom = 21.599617
+scale = Vector2(0.8636062, 0.8636062)
+texture = ExtResource("3_f81ii")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1495457093]
 position = Vector2(0, -5.676647)
