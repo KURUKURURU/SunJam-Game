@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://cdx74ek0c6pfp" path="res://img/9patch.png" id="1_1libd"]
 [ext_resource type="FontFile" uid="uid://bljm4gy6lf5kd" path="res://ft/dungeon-mode.ttf" id="1_qquvw"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckc44"]
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qquvw"]
 texture = ExtResource("1_1libd")
 texture_margin_left = 5.0
@@ -22,6 +25,7 @@ texture_margin_bottom = 5.0
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 7
 Button/fonts/font = ExtResource("1_qquvw")
+Button/styles/disabled = SubResource("StyleBoxFlat_ckc44")
 Button/styles/hover = SubResource("StyleBoxTexture_qquvw")
 Button/styles/normal = SubResource("StyleBoxTexture_crawd")
 Button/styles/pressed = SubResource("StyleBoxTexture_crawd")

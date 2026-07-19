@@ -134,7 +134,7 @@ stream = ExtResource("8_u4qax")
 volume_db = -13.22
 pitch_scale = 0.67
 
-[node name="Button" type="Button" parent="." unique_id=765729290]
+[node name="start" type="Button" parent="." unique_id=765729290]
 offset_left = 213.0
 offset_top = 193.0
 offset_right = 252.82272
@@ -143,7 +143,7 @@ scale = Vector2(3.2142456, 3.2142456)
 theme = ExtResource("9_e58y3")
 theme_override_font_sizes/font_size = 10
 
-[node name="Label" type="Label" parent="Button" unique_id=14813853]
+[node name="Label" type="Label" parent="start" unique_id=14813853]
 layout_mode = 0
 offset_left = 5.9111853
 offset_top = 9.022336
@@ -154,3 +154,4 @@ text = "Play!"
 label_settings = SubResource("LabelSettings_rxf60")
 
 [connection signal="pressed" from="question" to="." method="_on_question_pressed"]
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]

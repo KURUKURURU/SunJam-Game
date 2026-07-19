@@ -1,0 +1,334 @@
+[gd_scene format=3 uid="uid://cmulu2t0bvfpb"]
+
+[ext_resource type="Texture2D" uid="uid://df2nnstdlpqs5" path="res://img/tileatlas1.png" id="1_4nqmc"]
+[ext_resource type="Script" uid="uid://fnsr5qr4h4cx" path="res://scenes/level_select.gd" id="1_7plkq"]
+[ext_resource type="Texture2D" uid="uid://dpg3wwj31hbpm" path="res://img/mouselight.png" id="2_7plkq"]
+[ext_resource type="Script" uid="uid://djnonf03d462t" path="res://scenes/mouselight.gd" id="3_ckc44"]
+[ext_resource type="Theme" uid="uid://bqydg5w8kdsv1" path="res://scenes/button.tres" id="4_o2xx4"]
+[ext_resource type="FontFile" uid="uid://bljm4gy6lf5kd" path="res://ft/dungeon-mode.ttf" id="5_htctk"]
+[ext_resource type="FontFile" uid="uid://wdp0v3qquwv3" path="res://ft/dungeon-mode-inverted.ttf" id="6_s6tf7"]
+[ext_resource type="PackedScene" uid="uid://ckgc71x7k2gf4" path="res://scenes/window.tscn" id="7_u4mbh"]
+[ext_resource type="AudioStream" uid="uid://cx8tssaotudny" path="res://sfx/ting.wav" id="9_ckc44"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rovvv"]
+atlas = ExtResource("1_4nqmc")
+region = Rect2(99, 66, 33, 32)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_m4qq5"]
+light_mode = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_0wyvj"]
+font = ExtResource("5_htctk")
+font_size = 15
+font_color = Color(0, 0, 0, 1)
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.13725491)
+shadow_offset = Vector2(1.645, 1.375)
+
+[sub_resource type="Animation" id="Animation_7plkq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("title/levelbutton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("title2/levelbutton2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("title3/levelbutton3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ckc44"]
+resource_name = "fadeinto"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("title/levelbutton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("title2/levelbutton2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("title3/levelbutton3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o2xx4"]
+_data = {
+&"RESET": SubResource("Animation_7plkq"),
+&"fadeinto": SubResource("Animation_ckc44")
+}
+
+[node name="LevelSelect" type="Node2D" unique_id=774215280]
+script = ExtResource("1_7plkq")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=502485077]
+modulate = Color(1, 1, 1, 0.23137255)
+repeat_size = Vector2(630, 0)
+autoscroll = Vector2(15, 0)
+
+[node name="bg" type="TextureRect" parent="Parallax2D" unique_id=18004130]
+offset_left = -148.0
+offset_top = -40.0
+offset_right = 482.0
+offset_bottom = 342.0
+texture = SubResource("AtlasTexture_rovvv")
+stretch_mode = 1
+
+[node name="mouselight" type="PointLight2D" parent="." unique_id=201313747]
+scale = Vector2(1.9971976, 1.9971976)
+texture = ExtResource("2_7plkq")
+script = ExtResource("3_ckc44")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=278509427]
+offset_left = 45.0
+offset_top = 112.0
+offset_right = 579.0
+offset_bottom = 152.0
+scale = Vector2(0.3458467, 0.3458467)
+theme_override_constants/separation = 267
+
+[node name="title" type="Control" parent="HBoxContainer" unique_id=903245836]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="HBoxContainer/title" unique_id=896896437]
+material = SubResource("CanvasItemMaterial_m4qq5")
+layout_mode = 0
+offset_left = 17.0
+offset_top = 20.0
+offset_right = 348.0
+offset_bottom = 228.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_htctk")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[wave]Level 1"
+
+[node name="Title2" type="RichTextLabel" parent="HBoxContainer/title" unique_id=202069801]
+material = SubResource("CanvasItemMaterial_m4qq5")
+layout_mode = 0
+offset_left = 17.0
+offset_top = 20.0
+offset_right = 348.0
+offset_bottom = 228.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_s6tf7")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[wave]Level 1"
+
+[node name="levelbutton" type="Button" parent="HBoxContainer/title" unique_id=844988819]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 66.50345
+offset_top = 66.50342
+offset_right = 106.32614
+offset_bottom = 91.50342
+scale = Vector2(3.2142456, 3.2142456)
+theme = ExtResource("4_o2xx4")
+theme_override_font_sizes/font_size = 10
+
+[node name="Label" type="Label" parent="HBoxContainer/title/levelbutton" unique_id=1776674947]
+layout_mode = 0
+offset_left = 5.9111853
+offset_top = 9.022336
+offset_right = 76.91119
+offset_bottom = 32.022335
+scale = Vector2(0.4216989, 0.4216989)
+text = "play!"
+label_settings = SubResource("LabelSettings_0wyvj")
+horizontal_alignment = 1
+
+[node name="title2" type="Control" parent="HBoxContainer" unique_id=699344809]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="HBoxContainer/title2" unique_id=36875356]
+material = SubResource("CanvasItemMaterial_m4qq5")
+layout_mode = 0
+offset_left = 17.0
+offset_top = 20.0
+offset_right = 348.0
+offset_bottom = 228.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_htctk")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[wave]Level 2"
+
+[node name="Title2" type="RichTextLabel" parent="HBoxContainer/title2" unique_id=271516098]
+material = SubResource("CanvasItemMaterial_m4qq5")
+layout_mode = 0
+offset_left = 17.0
+offset_top = 20.0
+offset_right = 348.0
+offset_bottom = 228.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_s6tf7")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[wave]Level 2"
+
+[node name="levelbutton2" type="Button" parent="HBoxContainer/title2" unique_id=1458890696]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 59.734375
+offset_top = 69.39488
+offset_right = 99.55707
+offset_bottom = 94.39488
+scale = Vector2(3.2142456, 3.2142456)
+theme = ExtResource("4_o2xx4")
+theme_override_font_sizes/font_size = 10
+
+[node name="Label" type="Label" parent="HBoxContainer/title2/levelbutton2" unique_id=743887518]
+layout_mode = 0
+offset_left = 5.9111853
+offset_top = 9.022336
+offset_right = 76.91119
+offset_bottom = 32.022335
+scale = Vector2(0.4216989, 0.4216989)
+text = "play!"
+label_settings = SubResource("LabelSettings_0wyvj")
+horizontal_alignment = 1
+
+[node name="title3" type="Control" parent="HBoxContainer" unique_id=849686636]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="HBoxContainer/title3" unique_id=826720590]
+material = SubResource("CanvasItemMaterial_m4qq5")
+layout_mode = 0
+offset_left = 17.0
+offset_top = 20.0
+offset_right = 348.0
+offset_bottom = 228.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_htctk")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[wave]Level 3"
+
+[node name="Title2" type="RichTextLabel" parent="HBoxContainer/title3" unique_id=85059805]
+material = SubResource("CanvasItemMaterial_m4qq5")
+layout_mode = 0
+offset_left = 17.0
+offset_top = 20.0
+offset_right = 348.0
+offset_bottom = 228.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_s6tf7")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[wave]Level 3"
+
+[node name="levelbutton3" type="Button" parent="HBoxContainer/title3" unique_id=969993968]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 50.07379
+offset_top = 69.39488
+offset_right = 89.896484
+offset_bottom = 94.39488
+scale = Vector2(3.2142456, 3.2142456)
+theme = ExtResource("4_o2xx4")
+theme_override_font_sizes/font_size = 10
+
+[node name="Label" type="Label" parent="HBoxContainer/title3/levelbutton3" unique_id=1521513605]
+layout_mode = 0
+offset_left = 5.9111853
+offset_top = 9.022336
+offset_right = 76.91119
+offset_bottom = 32.022335
+scale = Vector2(0.4216989, 0.4216989)
+text = "play!"
+label_settings = SubResource("LabelSettings_0wyvj")
+horizontal_alignment = 1
+
+[node name="animation" type="AnimationPlayer" parent="HBoxContainer" unique_id=1097350644]
+libraries/ = SubResource("AnimationLibrary_o2xx4")
+
+[node name="window" parent="." unique_id=254981302 instance=ExtResource("7_u4mbh")]
+position = Vector2(160, 7)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=241115414]
+color = Color(0.0056611504, 0.0056611514, 0.00566115, 1)
+
+[node name="ting" type="AudioStreamPlayer" parent="." unique_id=1445657895]
+stream = ExtResource("9_ckc44")
+volume_db = -13.22
+pitch_scale = 0.67
+
+[connection signal="pressed" from="HBoxContainer/title/levelbutton" to="." method="lvl_1"]
+[connection signal="pressed" from="HBoxContainer/title2/levelbutton2" to="." method="lvl_2"]
+[connection signal="pressed" from="HBoxContainer/title3/levelbutton3" to="." method="lvl_3"]
