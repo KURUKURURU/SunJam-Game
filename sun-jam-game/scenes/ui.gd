@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var light: TextureProgressBar = $Light
 @onready var label: Label = $Label
 @onready var label_2: Label = $Label2
+@onready var win: AudioStreamPlayer = $win
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,3 +24,7 @@ func _process(delta: float) -> void:
 		Global.battery_dead = true
 		
 	light.value = 2000 - Global.light
+
+func reset():
+	Global.foam = 0
+	Global.light = 0

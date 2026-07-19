@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dr7flshjlbr1h"]
+
+[ext_resource type="Texture2D" uid="uid://b6ai3sx4ogtqc" path="res://img/lastbed.png" id="1_p7nx0"]
+[ext_resource type="Script" uid="uid://b4k23ym41cvlq" path="res://scenes/last_bed.gd" id="1_wr363"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i7avt"]
+normal = Vector2(-1, 0)
+
+[node name="LastBed" type="Node2D" unique_id=671292336]
+script = ExtResource("1_wr363")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=568158954]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1649529036]
+shape = SubResource("WorldBoundaryShape2D_i7avt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2043940266]
+texture = ExtResource("1_p7nx0")

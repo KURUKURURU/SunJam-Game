@@ -5,10 +5,18 @@
 [ext_resource type="FontFile" uid="uid://bljm4gy6lf5kd" path="res://ft/dungeon-mode.ttf" id="2_m7x51"]
 [ext_resource type="FontFile" uid="uid://wdp0v3qquwv3" path="res://ft/dungeon-mode-inverted.ttf" id="3_h61rw"]
 [ext_resource type="Texture2D" uid="uid://dpg3wwj31hbpm" path="res://img/mouselight.png" id="5_4v6gu"]
+[ext_resource type="Texture2D" uid="uid://d01axvouawepg" path="res://img/player/f3.png" id="5_ruo1u"]
+[ext_resource type="Texture2D" uid="uid://y71k40lyfimu" path="res://img/player/f1.png" id="5_s0oe1"]
+[ext_resource type="Texture2D" uid="uid://b372mvqkt84yt" path="res://img/player/b1.png" id="6_gqu1h"]
 [ext_resource type="Script" uid="uid://djnonf03d462t" path="res://scenes/mouselight.gd" id="6_nxjfj"]
+[ext_resource type="Texture2D" uid="uid://7ofvngu1126f" path="res://img/player/f2.png" id="6_trkcg"]
 [ext_resource type="Texture2D" uid="uid://ccrvk4151fsce" path="res://img/question.png" id="7_nxjfj"]
+[ext_resource type="Texture2D" uid="uid://ck4ka0ty5n5jo" path="res://img/player/b2.png" id="7_s0oe1"]
+[ext_resource type="Texture2D" uid="uid://c0t01gsyyuewb" path="res://img/player/b3.png" id="8_trkcg"]
 [ext_resource type="AudioStream" uid="uid://cx8tssaotudny" path="res://sfx/ting.wav" id="8_u4qax"]
 [ext_resource type="Theme" uid="uid://bqydg5w8kdsv1" path="res://scenes/button.tres" id="9_e58y3"]
+[ext_resource type="Texture2D" uid="uid://d35mxl1w708a3" path="res://img/player/b4.png" id="9_fbjtm"]
+[ext_resource type="AudioStream" uid="uid://4cujwg8s74oj" path="res://sfx/loopsong.wav" id="10_e58y3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_thu50"]
 atlas = ExtResource("1_ouf4f")
@@ -17,11 +25,75 @@ region = Rect2(99, 66, 33, 32)
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rxf60"]
 light_mode = 1
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_fbjtm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_s0oe1")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_s0oe1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_trkcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s0oe1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ruo1u")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 8.01
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hntex"]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": null
+}, {
+"duration": 10.0,
+"texture": null
+}, {
+"duration": 0.82,
+"texture": ExtResource("6_gqu1h")
+}, {
+"duration": 0.11,
+"texture": ExtResource("7_s0oe1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_trkcg")
+}, {
+"duration": 2.32,
+"texture": ExtResource("9_fbjtm")
+}, {
+"duration": 0.55,
+"texture": ExtResource("8_trkcg")
+}, {
+"duration": 0.19,
+"texture": ExtResource("7_s0oe1")
+}, {
+"duration": 0.26,
+"texture": ExtResource("6_gqu1h")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 8.01
+}]
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3f5hn"]
 light_mode = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_rxf60"]
 font = ExtResource("2_m7x51")
+font_size = 21
 font_color = Color(0, 0, 0, 1)
 
 [node name="startMenu" type="Node2D" unique_id=48786015]
@@ -35,35 +107,55 @@ autoscroll = Vector2(15, 0)
 offset_left = -148.0
 offset_top = -40.0
 offset_right = 482.0
-offset_bottom = 342.0
+offset_bottom = 375.0
 texture = SubResource("AtlasTexture_thu50")
 stretch_mode = 1
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=734892262]
 material = SubResource("CanvasItemMaterial_rxf60")
 offset_left = 17.0
-offset_top = 20.0
+offset_top = 49.0
 offset_right = 348.0
-offset_bottom = 228.0
+offset_bottom = 257.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("2_m7x51")
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = "[wave]Escape the Shelter"
+text = "[wave]CS MAJOR SIMULATOR"
 
 [node name="Title2" type="RichTextLabel" parent="." unique_id=1723326815]
 material = SubResource("CanvasItemMaterial_rxf60")
 offset_left = 17.0
-offset_top = 20.0
+offset_top = 49.0
 offset_right = 348.0
-offset_bottom = 228.0
+offset_bottom = 257.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_h61rw")
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = "[wave]Escape the Shelter"
+text = "[wave]CS MAJOR SIMULATOR"
+
+[node name="shadoww" type="AnimatedSprite2D" parent="." unique_id=98654332]
+self_modulate = Color(0.012617188, 0.012617188, 0.012617188, 0.49803922)
+position = Vector2(303.00003, 175)
+scale = Vector2(1.2840738, 1.2840738)
+sprite_frames = SubResource("SpriteFrames_fbjtm")
+animation = &"move"
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=987429477]
+position = Vector2(296, 175)
+scale = Vector2(1.2840738, 1.2840738)
+sprite_frames = SubResource("SpriteFrames_fbjtm")
+animation = &"move"
+
+[node name="blink" type="AnimatedSprite2D" parent="Sprite2D" unique_id=556041114]
+sprite_frames = SubResource("SpriteFrames_hntex")
+animation = &"move"
+autoplay = "move"
+frame_progress = 0.087777995
 
 [node name="intro" type="Node2D" parent="." unique_id=1333177938]
+visible = false
 
 [node name="info1" type="RichTextLabel" parent="intro" unique_id=1232395538]
 offset_left = 63.0
@@ -114,6 +206,7 @@ light's battery
 life"
 
 [node name="mouselight" type="PointLight2D" parent="." unique_id=1002511374]
+position = Vector2(235.99997, 257.99997)
 scale = Vector2(1.9971976, 1.9971976)
 texture = ExtResource("5_4v6gu")
 script = ExtResource("6_nxjfj")
@@ -135,23 +228,30 @@ volume_db = -13.22
 pitch_scale = 0.67
 
 [node name="start" type="Button" parent="." unique_id=765729290]
-offset_left = 213.0
-offset_top = 193.0
-offset_right = 252.82272
-offset_bottom = 218.0
+offset_left = 115.0
+offset_top = 198.0
+offset_right = 185.31198
+offset_bottom = 221.44443
 scale = Vector2(3.2142456, 3.2142456)
 theme = ExtResource("9_e58y3")
 theme_override_font_sizes/font_size = 10
 
 [node name="Label" type="Label" parent="start" unique_id=14813853]
 layout_mode = 0
-offset_left = 5.9111853
-offset_top = 9.022336
-offset_right = 76.91119
-offset_bottom = 32.022335
+offset_top = 1.2444601
+offset_right = 174.1127
+offset_bottom = 52.888077
 scale = Vector2(0.4216989, 0.4216989)
 text = "Play!"
 label_settings = SubResource("LabelSettings_rxf60")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="looptheme" type="AudioStreamPlayer" parent="." unique_id=936374464]
+stream = ExtResource("10_e58y3")
+volume_db = -9.176
+pitch_scale = 0.73
+autoplay = true
 
 [connection signal="pressed" from="question" to="." method="_on_question_pressed"]
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]

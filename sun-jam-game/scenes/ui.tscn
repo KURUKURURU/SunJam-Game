@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://d6w0dd33ux75" path="res://scenes/ui.gd" id="1_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://cdx74ek0c6pfp" path="res://img/9patch.png" id="1_x4jx1"]
 [ext_resource type="Texture2D" uid="uid://0e5kr4ye7cid" path="res://img/prog.png" id="2_yev5y"]
-[ext_resource type="FontFile" uid="uid://wdp0v3qquwv3" path="res://ft/dungeon-mode-inverted.ttf" id="3_yev5y"]
+[ext_resource type="FontFile" uid="uid://bljm4gy6lf5kd" path="res://ft/dungeon-mode.ttf" id="4_gdt2y"]
+[ext_resource type="AudioStream" uid="uid://bdv3w2dsijlhf" path="res://sfx/winsfx.wav" id="5_wm3ai"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rxf60"]
-font = ExtResource("3_yev5y")
 
 [node name="ui" type="CanvasLayer" unique_id=786002743]
 script = ExtResource("1_gdt2y")
@@ -49,21 +49,28 @@ texture_under = ExtResource("1_x4jx1")
 texture_progress = ExtResource("2_yev5y")
 
 [node name="Label" type="Label" parent="." unique_id=2083426025]
-offset_left = 43.999996
+texture_filter = 2
+offset_left = 42.999992
 offset_top = 310.00003
-offset_right = 115.0
+offset_right = 113.99999
 offset_bottom = 333.00003
 rotation = -1.5683818
-scale = Vector2(0.47841647, 0.47841647)
+scale = Vector2(0.7016387, 0.7016387)
+theme_override_fonts/font = ExtResource("4_gdt2y")
 text = "Light"
 label_settings = SubResource("LabelSettings_rxf60")
 
 [node name="Label2" type="Label" parent="." unique_id=846937010]
-offset_left = 7.000004
+offset_left = 6.0
 offset_top = 310.00003
-offset_right = 78.0
+offset_right = 77.0
 offset_bottom = 333.00003
 rotation = -1.5683818
-scale = Vector2(0.47841647, 0.47841647)
+scale = Vector2(0.7016387, 0.7016387)
+theme_override_fonts/font = ExtResource("4_gdt2y")
 text = "Foam"
 label_settings = SubResource("LabelSettings_rxf60")
+
+[node name="win" type="AudioStreamPlayer" parent="." unique_id=113629624]
+stream = ExtResource("5_wm3ai")
+volume_db = -14.857

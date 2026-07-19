@@ -14,6 +14,9 @@
 atlas = ExtResource("1_4nqmc")
 region = Rect2(99, 66, 33, 32)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wm3ai"]
+light_mode = 1
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_m4qq5"]
 light_mode = 1
 
@@ -137,9 +140,9 @@ _data = {
 script = ExtResource("1_7plkq")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=502485077]
-modulate = Color(1, 1, 1, 0.23137255)
 repeat_size = Vector2(630, 0)
 autoscroll = Vector2(15, 0)
+repeat_times = 2
 
 [node name="bg" type="TextureRect" parent="Parallax2D" unique_id=18004130]
 offset_left = -148.0
@@ -149,6 +152,10 @@ offset_bottom = 342.0
 texture = SubResource("AtlasTexture_rovvv")
 stretch_mode = 1
 
+[node name="window" parent="Parallax2D" unique_id=254981302 instance=ExtResource("7_u4mbh")]
+material = SubResource("CanvasItemMaterial_wm3ai")
+position = Vector2(160, 7)
+
 [node name="mouselight" type="PointLight2D" parent="." unique_id=201313747]
 scale = Vector2(1.9971976, 1.9971976)
 texture = ExtResource("2_7plkq")
@@ -156,9 +163,9 @@ script = ExtResource("3_ckc44")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=278509427]
 offset_left = 45.0
-offset_top = 112.0
+offset_top = 143.0
 offset_right = 579.0
-offset_bottom = 152.0
+offset_bottom = 183.0
 scale = Vector2(0.3458467, 0.3458467)
 theme_override_constants/separation = 267
 
@@ -317,9 +324,6 @@ horizontal_alignment = 1
 
 [node name="animation" type="AnimationPlayer" parent="HBoxContainer" unique_id=1097350644]
 libraries/ = SubResource("AnimationLibrary_o2xx4")
-
-[node name="window" parent="." unique_id=254981302 instance=ExtResource("7_u4mbh")]
-position = Vector2(160, 7)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=241115414]
 color = Color(0.0056611504, 0.0056611514, 0.00566115, 1)

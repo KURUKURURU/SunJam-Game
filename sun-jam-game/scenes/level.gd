@@ -1,5 +1,11 @@
 extends Node2D
+@onready var player: CharacterBody2D = $Player
+@onready var border: Area2D = $Border
+@onready var death: AudioStreamPlayer = $death
+@onready var animation: AnimationPlayer = $the_horror/animation
+@onready var last_bed_hitbox: Area2D = $LastBed/Area2D
 
+var start_position : Vector2
 
 var foam_particle = preload("res://scenes/foam.tscn")
 
@@ -7,7 +13,7 @@ var limit := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	start_position = player.position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,3 +38,23 @@ func _process(delta: float) -> void:
 		#print(limit)
 		Input.action_release("click")
 		limit = 0 
+
+
+func _on_border_body_entered(body: Node2D) -> void:
+	if body == player:
+		Ui.reset()
+		player.position = start_position
+		animation.play("scare")
+		death.play()
+
+
+func last_bed_met(body: Node2D) -> void:
+	if body == player:
+		Ui.reset()
+		Ui.win.play()
+		match Global.current_level:
+			1: Global.level_1_complete = true
+			2: Global.level_2_complete = true
+			3: 
+				pass # finish the game
+		get_tree().change_scene_to_file("res://scenes/level_select.tscn")
