@@ -36,6 +36,20 @@ sources/0 = SubResource("TileSetAtlasSource_w7c3h")
 [node name="Level" type="Node2D" unique_id=55695551]
 script = ExtResource("1_w8frs")
 
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=597099831]
+ignore_camera_scroll = true
+
+[node name="ColorRect" type="ColorRect" parent="Parallax2D" unique_id=1186552866]
+offset_left = -327.0
+offset_top = -322.0
+offset_right = 3765.0
+offset_bottom = 792.0
+color = Color(0.09239707, 0.09239706, 0.09239706, 1)
+
+[node name="bg" type="TextureRect" parent="Parallax2D" unique_id=360739]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=465967631]
 tile_map_data = PackedByteArray("AAAAAAkAAAABAAAAAAABAAkAAAABAAAAAAACAAkAAAABAAAAAAADAAkAAAABAAAAAAAEAAkAAAABAAAAAAAFAAkAAAABAAAAAAAGAAkAAAABAAAAAAAHAAkAAAABAAAAAAAIAAkAAAABAAAAAAAJAAkAAAABAAAAAAAKAAkAAAABAAAAAAAHAAUAAAABAAAAAAAIAAUAAAABAAAAAAAJAAUAAAABAAAAAAAKAAUAAAABAAAAAAALAAUAAAABAAAAAAAMAAUAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_rxf60")
@@ -45,3 +59,6 @@ position = Vector2(91, 177)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=96672372]
 position_smoothing_enabled = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1016684328]
+color = Color(0.0056611504, 0.0056611514, 0.00566115, 1)

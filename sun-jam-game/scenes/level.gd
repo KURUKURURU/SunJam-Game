@@ -13,8 +13,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if limit < 20:
+	if limit < 30 and not Global.ran_out:
 		if Input.is_action_pressed("click"):
+			Global.foam += 1
 			var particle = foam_particle.instantiate()
 			particle.position = Vector2(get_global_mouse_position())
 			particle.position.x = particle.position.x - randi_range(0, 10)
@@ -26,6 +27,7 @@ func _process(delta: float) -> void:
 			add_child(particle)
 			await particle.fade()
 			limit += 1
+			
 	else:
 		#print(limit)
 		Input.action_release("click")
