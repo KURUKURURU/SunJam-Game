@@ -19,3 +19,6 @@ Controls
     Mouse — Aim flashlight
 
 I made this in 24 hours for a University 24 hour game jam, and it's polished enough to submit as a Hack Club Project. Hope you enjoyed it.
+
+this is the horror jumpscare face btw
+<img width="220" height="218" alt="freak-scared" src="https://github.com/user-attachments/assets/9221d041-a5f9-4fbe-acfb-74ae6e54a8da" />
